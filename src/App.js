@@ -41,7 +41,9 @@ const mapDispatchToProps = (dispatch) =>{
       //Thunkway
       //dispatch(fetchUsers());
       //Promiseway
-      dispatch(fetchUsersPromise());
+      dispatch(fetchUsersPromise()).then((resp)=> {
+        console.log('asdfsdf', resp);
+      });
     }
   }
 }
