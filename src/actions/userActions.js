@@ -13,10 +13,8 @@ export function fetchUsers(){
 }
 
 export function fetchUsersPromise(){
-    return function(dispatch){
-        dispatch({
-            type:'User',
-            payload:axios.get('https://jsonplaceholder.typicode.com/users')
-        })
+    return {
+        type:'User',
+        payload:axios.get('https://jsonplaceholder.typicode.com/users')
     }
 }

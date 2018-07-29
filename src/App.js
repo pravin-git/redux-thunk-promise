@@ -39,9 +39,9 @@ const mapDispatchToProps = (dispatch) =>{
     fetchUsers: () =>{
       dispatch({type:"Fetch_User_start"});
       //Thunkway
-      dispatch(fetchUsers());
+      //dispatch(fetchUsers());
       //Promiseway
-      //dispatch(fetchUsersPromise());
+      dispatch(fetchUsersPromise());
     }
   }
 }
