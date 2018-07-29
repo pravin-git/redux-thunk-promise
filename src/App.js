@@ -15,15 +15,11 @@ class App extends Component {
   
   render() {
     const { users } = this.props;
-
-    console.log(users);
-    
     if(!users.length){
       return <button onClick={this.fetchUsers.bind(this)}> Load Users </button>
     }
 
     const mappedusers = users.map(usr => <li>{usr.name}</li>)
-
     return <div>   
       <h1>Pravin</h1>
       <ul>{mappedusers}</ul>
