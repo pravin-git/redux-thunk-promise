@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
-import { fetchUsers  } from './actions/userActions'
+import { fetchUsers, fetchUsersPromise  } from './actions/userActions'
 
 class App extends Component {
 
@@ -38,7 +38,10 @@ const mapDispatchToProps = (dispatch) =>{
   return {
     fetchUsers: () =>{
       dispatch({type:"Fetch_User_start"});
+      //Thunkway
       dispatch(fetchUsers());
+      //Promiseway
+      //dispatch(fetchUsersPromise());
     }
   }
 }
