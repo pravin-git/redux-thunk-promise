@@ -14,14 +14,17 @@ class App extends Component {
   }
   
   render() {
-    const { users } = this.props;
+    const { users, showHeader } = this.props;
     if(!users.length){
       return <button onClick={this.fetchUsers.bind(this)}> Load Users </button>
     }
 
+    const header = showHeader ? <h1>pramod</h1> : <h6>pravin</h6>
     const mappedusers = users.map(usr => <li>{usr.name}</li>)
+    
     return <div>   
-      <h1>Pravin</h1>
+
+      {header}
       <ul>{mappedusers}</ul>
     </div>  
   }
@@ -30,7 +33,8 @@ class App extends Component {
 function mapStateToProps(state, props){
   return{
     //user is name defined in combinedreducer
-    users : state.user.users
+    users : state.user.users,
+    showHeader : state.user.fetched
   };
 }
 
