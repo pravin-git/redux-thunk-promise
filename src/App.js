@@ -15,15 +15,17 @@ class App extends Component {
   
   render() {
     const { users, showHeader } = this.props;
-    if(!users.length){
-      return <button onClick={this.fetchUsers.bind(this)}> Load Users </button>
-    }
-
     const header = showHeader ? <h1>pramod</h1> : <h6>pravin</h6>
+    if(!users.length){
+      return <div>
+        {header} 
+        <button onClick={this.fetchUsers.bind(this)}> Load Users </button>
+      </div>
+    }
+    
     const mappedusers = users.map(usr => <li>{usr.name}</li>)
     
     return <div>   
-
       {header}
       <ul>{mappedusers}</ul>
     </div>  
