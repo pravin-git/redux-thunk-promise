@@ -1,8 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import { shallow, mount, render } from 'enzyme';
 
+configure({ adapter: new Adapter() });
+
+import UserComponent from './components/UserComponent';
 import userReducer  from './reducers/userReducer';
+
+configure({adapter: new Adapter()});
 
 it('userReducer', () =>{
 
@@ -23,9 +31,13 @@ it('userReducer', () =>{
   const actionError = { type : 'Fetch_users_error', payload : []} ;
   expect(userReducer(undefined, actionError)).toEqual({"error": actionError.payload, "fetched": false, "fetching": false, "users": []});
 
-
-  
 });
+
+it('test component', () =>{
+  const wrapper = shallow(<UserComponent users={[]} showHeader={false} />);
+  console.log(wrapper);
+  //expect(wrapper.find('.hello')).to.have.length(1);
+})
 
 it('add', () => {
   expect(1).toEqual(1);
