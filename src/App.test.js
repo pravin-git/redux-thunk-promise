@@ -33,11 +33,18 @@ it('userReducer', () =>{
 
 });
 
-it('test component', () =>{
+it('user component when showHeader is false', () =>{
   const wrapper = shallow(<UserComponent users={[]} showHeader={false} />);
-  console.log(wrapper);
-  //expect(wrapper.find('.hello')).to.have.length(1);
+  expect(wrapper.find('#findme').find('h6').length).toBe(1);
+  expect(wrapper.find('#findme').length).toBe(1);
 })
+
+it('user component when showHeader is true', () =>{
+  const wrapper = shallow(<UserComponent users={[]} showHeader={true} />);
+  expect(wrapper.find('#findme').find('h6').length).toBe(0);
+  expect(wrapper.find('#findme').length).toBe(1); 
+})
+
 
 it('add', () => {
   expect(1).toEqual(1);
