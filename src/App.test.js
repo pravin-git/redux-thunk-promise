@@ -23,6 +23,8 @@ it('userReducer', () =>{
   const actionError = { type : 'Fetch_users_error', payload : []} ;
   expect(userReducer(undefined, actionError)).toEqual({"error": actionError.payload, "fetched": false, "fetching": false, "users": []});
 
+
+  
 });
 
 it('add', () => {
