@@ -5,8 +5,6 @@ import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { shallow, mount, render } from 'enzyme';
 
-configure({ adapter: new Adapter() });
-
 import UserComponent from './components/UserComponent';
 import userReducer  from './reducers/userReducer';
 
@@ -43,6 +41,11 @@ it('user component when showHeader is true', () =>{
   const wrapper = shallow(<UserComponent users={[]} showHeader={true} />);
   expect(wrapper.find('#findme').find('h6').length).toBe(0);
   expect(wrapper.find('#findme').length).toBe(1); 
+})
+
+it('user component when users are there', () =>{
+  const wrapper = shallow(<UserComponent users={[{name:'pravin'}]} showHeader={true} />);
+  expect(wrapper.find('#userList').length).toBe(1); 
 })
 
 

@@ -20,7 +20,7 @@ export class UserComponent extends Component{
     
         const mappedusers = users.map(usr => <li>{usr.name}</li>)
     
-        return <div>   
+        return <div id="userList">   
             {header}
             <ul>{mappedusers}</ul>
         </div>  
