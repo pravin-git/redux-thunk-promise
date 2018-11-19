@@ -15,6 +15,6 @@ export function fetchUsers(){
 export function fetchUsersPromise(){
     return {
         type:'User',
-        payload:axios.get('https://jsonplaceholder.typicode.com/users')
+        payload:axios.get('http://localhost:3000/flashes')
     }
 }
