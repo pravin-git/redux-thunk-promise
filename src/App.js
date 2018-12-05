@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
-import  UserContainer  from './containers/UserContainer';
+import React, { Component } from "react";
+import UserContainer from "./containers/UserContainer";
+import CreatePage  from "./pages/CreatePage";
 
 class App extends Component {
- 
   render() {
-    return <div><UserContainer/> </div>
+    return (
+      <div>
+        <CreatePage />
+      </div>
+    );
   }
 }
 
